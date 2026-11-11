@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, content)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:replace="${title}">Đạt Estate | Quản lý giao dịch</title>
+    <meta name="theme-color" content="#183c35">
+    <link rel="stylesheet" th:href="@{/css/estate.css}">
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="app-brand" th:href="@{/giao-dich}" aria-label="Đạt Estate - Trang chủ">
+            <span class="brand-mark" aria-hidden="true">Đ</span>
+            <span class="brand-copy">
+                <strong>ĐẠT ESTATE</strong>
+                <small>QUẢN LÝ BẤT ĐỘNG SẢN</small>
+            </span>
+        </a>
+        <nav class="app-nav" aria-label="Điều hướng chính">
+            <a class="nav-link" th:href="@{/giao-dich}">Giao dịch</a>
+            <a class="btn btn-light" th:href="@{/giao-dich/them-moi}">+ Tạo giao dịch</a>
+        </nav>
+    </div>
+</header>
+<main class="container app-main">
+    <div class="alert alert-success" th:if="${thongBao}" th:text="${thongBao}"></div>
+    <th:block th:replace="${content}"></th:block>
+</main>
+<footer class="app-footer">
+    <div class="container footer-inner">
+        <span>Đạt Estate</span>
+        <span>Thiết kế và phát triển bởi Nguyễn Văn Đạt</span>
+    </div>
+</footer>
+</body>
+</html>
